@@ -181,6 +181,8 @@ if __name__ == "__main__":
     sg.comb_width = 0.052
 
     for i in range(num_flakes):
-        print(f"Iteration {i}")
+        if i % 100 == 0:
+            print(f"Iteration {i+1}/{num_flakes}")
         sg.rand()
         sg.to_svg(f"./sym{sg.symmetry}_{i}.svg")
+    print(f"Iteration {i+1}/{num_flakes}")
