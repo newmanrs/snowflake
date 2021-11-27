@@ -7,8 +7,8 @@ class SnowflakeGenerator():
     _default_parameters = {
         "symmetry": 6,
         "global_scale_factor": 200,
-        "ray_width": 0.065,  # 0.06,  0.05 is the "extra_thick.gif"
-        "comb_width": 0.053,  #
+        "ray_width": 0.065,  # Symmetry of snowflake to center
+        "comb_width": 0.053,  # Protrusions from rays
         "min_comb_count": 3,
         "max_comb_count": 5,
         "comb_tip_type": "angled",
@@ -174,11 +174,13 @@ class SnowflakeGenerator():
 
 if __name__ == "__main__":
 
-    num_flakes = 10
+    num_flakes = 20
     sg = SnowflakeGenerator()
-    sg.symmetry = 7
+    sg.symmetry = 6
+    sg.ray_width = 0.065
+    sg.comb_width = 0.052
 
     for i in range(num_flakes):
-        print("Iteration {}".format(i))
+        print(f"Iteration {i}")
         sg.rand()
-        sg.to_svg("img/{}.svg".format(i))
+        sg.to_svg(f"./sym{sg.symmetry}_{i}.svg")
