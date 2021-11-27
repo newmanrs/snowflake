@@ -25,3 +25,7 @@ Twenty-fold perhaps looks too much like a virus:
 ## UI
 
 User interface to the script is non-existent, see script edit `if __name__ == '__main__'` for basic overriding of parameters.  Good luck and have fun.
+
+## License
+
+Nudge me to choose one if need be.
